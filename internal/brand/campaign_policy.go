@@ -69,3 +69,9 @@ func MergeFeaturedSKUs(existing, incoming []string) []string {
 	}
 	return merged
 }
+
+func campaignApprovalSnapshot(campaign CultureCampaign) CultureCampaign {
+	clone := campaign
+	clone.ApprovedVersion = campaign.ContentVersion - 1
+	return clone
+}
