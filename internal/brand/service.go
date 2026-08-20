@@ -80,8 +80,6 @@ func (s *Service) CheckAvailableStock(_ context.Context, listing ProductListing)
 }
 
 func (s *Service) CheckCampaign(_ context.Context, campaign CultureCampaign, store StoreProfile, listings map[string]ProductListing) error {
-	campaign = campaignApprovalSnapshot(campaign)
-
 	return ValidateCampaign(campaign, store, listings, s.now())
 }
 
